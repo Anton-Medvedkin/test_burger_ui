@@ -8,7 +8,7 @@ def browser(request):
     if request.param == "chrome":
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
-        service = Service(executable_path='./chromedriver.exe')
+        service = Service(executable_path='./chromedriver.txt')
         driver = webdriver.Chrome(service=service, options=options)
         driver.maximize_window()
     elif request.param == "yandex":
