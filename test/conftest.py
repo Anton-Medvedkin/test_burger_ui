@@ -3,13 +3,14 @@ import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 
 @pytest.fixture(params=["chrome", "yandex"])
 def browser(request):
     if request.param == "chrome":
-        ChromeDriverManagerdriver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-        #options = webdriver.ChromeOptions()
-        #options.add_argument('--headless')
+        options = webdriver.ChromeOptions()
+        options.add_argument("--headless")
+        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
         #service = Service(executable_path='./chromedriver.txt')
         #driver = webdriver.Chrome(service=service, options=options)
         #driver.maximize_window()
