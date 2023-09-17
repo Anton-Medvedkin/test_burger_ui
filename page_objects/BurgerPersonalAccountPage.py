@@ -28,7 +28,7 @@ class PersonalAccountPage():
         return WebDriverWait(self.driver, time).until(EC.visibility_of_all_elements_located(locator),
                                                       message=f"Can't find elements by locator {locator}")
 
-    def go_to_site(self):
+    def go_to_personal_account_page(self):
         return self.driver.get(self.base_url)
 
     def click_button_constructor(self):
