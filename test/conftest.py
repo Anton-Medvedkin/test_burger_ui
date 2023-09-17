@@ -1,14 +1,15 @@
 import pytest
 import requests
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 
 @pytest.fixture(params=["chrome", "yandex"])
 def browser(request):
     if request.param == "chrome":
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
-        chrome_driver_path = './drivers/chromedriver'
-        driver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
+        service = Service(executable_path='./chromedriver.exe')
+        driver = webdriver.Chrome(service=service, options=options)
         driver.maximize_window()
     elif request.param == "yandex":
         # options = webdriver.ChromeOptions()
