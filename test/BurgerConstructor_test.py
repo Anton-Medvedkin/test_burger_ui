@@ -1,7 +1,8 @@
 from page_objects.BurgerConstructorPage import ConstructorPage, ConstructorLocators
-
-
-def test_section(browser):
+import allure
+@allure.title("Navigating through sections")
+@allure.description("Navigation through sections of the main page.")
+def test_navigating_through_sections(browser):
     main_constructor_page = ConstructorPage(browser)
     main_constructor_page.go_to_constructor_page()
     main_constructor_page.click_button_sauces()
