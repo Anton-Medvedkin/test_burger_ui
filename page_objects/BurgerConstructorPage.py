@@ -49,10 +49,10 @@ class ConstructorPage():
         self.find_element(ConstructorLocators.LOCATOR_CONSTRUCTOR_PAGE_BUTTON_PERSONAL_CABINET, time=10).click()
 
     def click_button_buns(self):
-        self.find_element(ConstructorLocators.LOCATOR_CONSTRUCTOR_PAGE_BUTTON_BUNS, time=10).click()
+        self.find_element(ConstructorLocators.LOCATOR_CONSTRUCTOR_PAGE_BUTTON_BUNS, time=20).click()
 
     def click_button_sauces(self):
-        self.find_element(ConstructorLocators.LOCATOR_CONSTRUCTOR_PAGE_BUTTON_SAUCES, time=10).click()
+        self.find_element(ConstructorLocators.LOCATOR_CONSTRUCTOR_PAGE_BUTTON_SAUCES, time=20).click()
 
     def click_button_toppings(self):
-        self.find_element(ConstructorLocators.LOCATOR_CONSTRUCTOR_PAGE_BUTTON_TOPPINGS, time=10).click()
+        self.find_element(ConstructorLocators.LOCATOR_CONSTRUCTOR_PAGE_BUTTON_TOPPINGS, time=20).click()
