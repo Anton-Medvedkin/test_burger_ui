@@ -6,18 +6,8 @@ import allure
 @allure.title("Transfer to personal account")
 @allure.description("Checking the transition to the personal account by clicking the button.")
 def test_transfer_to_personal_account(browser):
-    main_constructor_page = ConstructorPage(browser)
-    main_constructor_page.go_to_constructor_page()
-    main_constructor_page.click_button_personal_cabinet()
-    main_entrance_page = EntrancePage(browser)
-    assert main_entrance_page.find_element(EntranceLocators.LOCATOR_ENTANCE_PAGE_CAPTION)
-    assert main_entrance_page.driver.current_url == "https://stellarburgers.nomoreparties.site/login"
-    main_entrance_page.filling_entance_form("medvetdhek.ant@yandex.by", "123h45te67")
-    assert main_constructor_page.find_element(ConstructorLocators.LOCATOR_CONSTRUCTOR_PAGE_BUTTON_BUNS)
-    assert main_entrance_page.driver.current_url == "https://stellarburgers.nomoreparties.site/"
-    main_constructor_page = ConstructorPage(browser)
-    main_constructor_page.click_button_personal_cabinet()
     main_account_page = PersonalAccountPage(browser)
+    main_account_page.transfer_to_personal_account(browser)
     assert main_account_page.find_element(PersonalAccountLocators.LOCATOR_ACCOUNT_PAGE_BUTTON_PROFILE)
     assert main_account_page.driver.current_url == "https://stellarburgers.nomoreparties.site/account/profile"
 
@@ -26,17 +16,9 @@ def test_transfer_to_personal_account(browser):
 @allure.description("The transition from the personal account to the constructor by clicking the button.")
 def test_transfer_to_constructor_via_button(browser):
     main_constructor_page = ConstructorPage(browser)
-    main_constructor_page.go_to_constructor_page()
-    main_constructor_page.click_button_personal_cabinet()
     main_entrance_page = EntrancePage(browser)
-    assert main_entrance_page.find_element(EntranceLocators.LOCATOR_ENTANCE_PAGE_CAPTION)
-    assert main_entrance_page.driver.current_url == "https://stellarburgers.nomoreparties.site/login"
-    main_entrance_page.filling_entance_form("medvetdhek.ant@yandex.by", "123h45te67")
-    assert main_constructor_page.find_element(ConstructorLocators.LOCATOR_CONSTRUCTOR_PAGE_BUTTON_BUNS)
-    assert main_entrance_page.driver.current_url == "https://stellarburgers.nomoreparties.site/"
-    main_constructor_page = ConstructorPage(browser)
-    main_constructor_page.click_button_personal_cabinet()
     main_account_page = PersonalAccountPage(browser)
+    main_account_page.transfer_to_personal_account(browser)
     assert main_account_page.find_element(PersonalAccountLocators.LOCATOR_ACCOUNT_PAGE_BUTTON_PROFILE)
     assert main_account_page.driver.current_url == "https://stellarburgers.nomoreparties.site/account/profile"
     main_account_page.click_button_constructor()
@@ -48,17 +30,9 @@ def test_transfer_to_constructor_via_button(browser):
 @allure.description("The transition from the personal account to the constructor by clicking the logo.")
 def test_transfer_to_constructor_via_logo(browser):
     main_constructor_page = ConstructorPage(browser)
-    main_constructor_page.go_to_constructor_page()
-    main_constructor_page.click_button_personal_cabinet()
     main_entrance_page = EntrancePage(browser)
-    assert main_entrance_page.find_element(EntranceLocators.LOCATOR_ENTANCE_PAGE_CAPTION)
-    assert main_entrance_page.driver.current_url == "https://stellarburgers.nomoreparties.site/login"
-    main_entrance_page.filling_entance_form("medvetdhek.ant@yandex.by", "123h45te67")
-    assert main_constructor_page.find_element(ConstructorLocators.LOCATOR_CONSTRUCTOR_PAGE_BUTTON_BUNS)
-    assert main_entrance_page.driver.current_url == "https://stellarburgers.nomoreparties.site/"
-    main_constructor_page = ConstructorPage(browser)
-    main_constructor_page.click_button_personal_cabinet()
     main_account_page = PersonalAccountPage(browser)
+    main_account_page.transfer_to_personal_account(browser)
     assert main_account_page.find_element(PersonalAccountLocators.LOCATOR_ACCOUNT_PAGE_BUTTON_PROFILE)
     assert main_account_page.driver.current_url == "https://stellarburgers.nomoreparties.site/account/profile"
     main_account_page.click_button_logo()
@@ -69,18 +43,9 @@ def test_transfer_to_constructor_via_logo(browser):
 @allure.title("logout account")
 @allure.description("Checking the account logout.")
 def test_logout_account(browser):
-    main_constructor_page = ConstructorPage(browser)
-    main_constructor_page.go_to_constructor_page()
-    main_constructor_page.click_button_personal_cabinet()
     main_entrance_page = EntrancePage(browser)
-    assert main_entrance_page.find_element(EntranceLocators.LOCATOR_ENTANCE_PAGE_CAPTION)
-    assert main_entrance_page.driver.current_url == "https://stellarburgers.nomoreparties.site/login"
-    main_entrance_page.filling_entance_form("medvetdhek.ant@yandex.by", "123h45te67")
-    assert main_constructor_page.find_element(ConstructorLocators.LOCATOR_CONSTRUCTOR_PAGE_BUTTON_BUNS)
-    assert main_entrance_page.driver.current_url == "https://stellarburgers.nomoreparties.site/"
-    main_constructor_page = ConstructorPage(browser)
-    main_constructor_page.click_button_personal_cabinet()
     main_account_page = PersonalAccountPage(browser)
+    main_account_page.transfer_to_personal_account(browser)
     assert main_account_page.find_element(PersonalAccountLocators.LOCATOR_ACCOUNT_PAGE_BUTTON_PROFILE)
     assert main_account_page.driver.current_url == "https://stellarburgers.nomoreparties.site/account/profile"
     main_account_page.click_button_logout()
