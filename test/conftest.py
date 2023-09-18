@@ -9,11 +9,13 @@ from selenium.webdriver.chrome.options import Options
 def browser(request):
     if request.param == "chrome":
         options = webdriver.ChromeOptions()
-        options.add_argument("--headless")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--no-sandbox")
         driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
     elif request.param == "yandex":
         options = webdriver.ChromeOptions()
-        options.add_argument("--headless")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--no-sandbox")
         driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
     else:
         raise ValueError("Неподдерживаемый браузер")
