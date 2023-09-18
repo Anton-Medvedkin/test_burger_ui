@@ -11,15 +11,10 @@ def browser(request):
         options = webdriver.ChromeOptions()
         options.add_argument("--headless")
         driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-        #service = Service(executable_path='./chromedriver.txt')
-        #driver = webdriver.Chrome(service=service, options=options)
-        #driver.maximize_window()
     elif request.param == "yandex":
-        # options = webdriver.ChromeOptions()
-        # binary_yandex_driver_file = 'yandexdriver.exe'
         options = webdriver.ChromeOptions()
-        options.add_argument('--headless')
-        driver = webdriver.Chrome()
+        options.add_argument("--headless")
+        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
     else:
         raise ValueError("Неподдерживаемый браузер")
     yield driver
