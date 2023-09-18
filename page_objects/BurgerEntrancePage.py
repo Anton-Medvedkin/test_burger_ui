@@ -2,7 +2,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-class EntanceLocators:
+class EntranceLocators:
 
     #Поле для ввода email
     LOCATOR_ENTANCE_PAGE_EMAIL = (By.XPATH, "//input[@type='text']")
@@ -17,7 +17,7 @@ class EntanceLocators:
 
 
 
-class EntancePage():
+class EntrancePage():
 
     def __init__(self, driver):
         self.driver = driver
@@ -35,6 +35,6 @@ class EntancePage():
         return self.driver.get(self.base_url)
 
     def filling_entance_form(self, email, password):
-        self.find_element(EntanceLocators.LOCATOR_ENTANCE_PAGE_EMAIL, time=10).send_keys(email)
-        self.find_element(EntanceLocators.LOCATOR_ENTANCE_PAGE_PASSWORD, time=10).send_keys(password)
-        self.find_element(EntanceLocators.LOCATOR_ENTANCE_PAGE_BUTTON, time=10).click()
+        self.find_element(EntranceLocators.LOCATOR_ENTANCE_PAGE_EMAIL, time=10).send_keys(email)
+        self.find_element(EntranceLocators.LOCATOR_ENTANCE_PAGE_PASSWORD, time=10).send_keys(password)
+        self.find_element(EntranceLocators.LOCATOR_ENTANCE_PAGE_BUTTON, time=10).click()
