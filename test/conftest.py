@@ -21,7 +21,7 @@ def browser(request):
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--headless")
-        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager("116.0.5845.96-1").install()), options=options)
+        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager("114.0.5735.685").install()), options=options)
     else:
         raise ValueError("Неподдерживаемый браузер")
     yield driver
